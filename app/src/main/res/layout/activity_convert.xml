@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/ac_from_id"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:hint="@string/select_from_currency_code"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/ac_to_id"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:hint="@string/select_to_currency_code"
+            app:layout_constraintEnd_toEndOf="@id/ac_from_id"
+            app:layout_constraintStart_toStartOf="@id/ac_from_id"
+            app:layout_constraintTop_toBottomOf="@id/ac_from_id" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_value"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:hint="@string/enter_the_value_to_convert"
+            android:inputType="numberDecimal"
+            app:layout_constraintEnd_toEndOf="@id/ac_from_id"
+            app:layout_constraintStart_toStartOf="@id/ac_from_id"
+            app:layout_constraintTop_toBottomOf="@id/ac_to_id" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_converted_value"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:layout_marginTop="@dimen/size_20dp"
+            android:gravity="center"
+            android:hint="@string/select_to_currency_code"
+            android:textSize="@dimen/font_20"
+            android:textStyle="bold|italic"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/ac_from_id"
+            app:layout_constraintStart_toStartOf="@id/ac_from_id"
+            app:layout_constraintTop_toBottomOf="@id/et_value"
+            tools:text="value....."
+            tools:visibility="visible" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt_convert"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/size_20dp"
+            android:layout_marginEnd="@dimen/size_20dp"
+            android:layout_marginBottom="@dimen/size_20dp"
+            android:background="@color/blue"
+            android:hint="@string/convert"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/font_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/ac_from_id"
+            app:layout_constraintStart_toStartOf="@id/ac_from_id" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
